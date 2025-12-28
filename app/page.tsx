@@ -1,9 +1,9 @@
-import Image from "next/image";
 
+import Herosection from "@/components/hero";
 export default function Home() {
   return (
-    <div>
-      
+    <div className="mt-40">
+      <Herosection/>
     </div>
   );
 }
