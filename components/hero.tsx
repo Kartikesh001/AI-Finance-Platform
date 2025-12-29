@@ -12,35 +12,28 @@ const HeroSection = () => {
     const handleScroll = () => {
       if (!imageRef.current) return;
 
-      const scrollPosition = window.scrollY;
-      const scrollThreshold = 100;
-
-      if (scrollPosition > scrollThreshold) {
-        imageRef.current.classList.add("scrolled");
+      if (window.scrollY > 100) {
+        imageRef.current.classList.add("hero-image-scrolled");
       } else {
-        imageRef.current.classList.remove("scrolled");
+        imageRef.current.classList.remove("hero-image-scrolled");
       }
     };
 
     window.addEventListener("scroll", handleScroll);
-
-    return () => {
-      window.removeEventListener("scroll", handleScroll);
-    };
+    return () => window.removeEventListener("scroll", handleScroll);
   }, []);
 
   return (
-    <div className="py-1 px-4 text-center">
-      <div className="max-w-3xl mx-auto space-y-5">
+    <div className="py-3 px-4 text-center">
+      {/* TEXT */}
+      <div className="max-w-4xl mx-auto space-y-6">
         <h1 className="text-5xl md:text-7xl lg:text-[90px] font-bold gradient-title">
           Manage Your Wealth Effectively <br /> With Intelligence
         </h1>
 
         <p className="text-muted-foreground text-lg">
           Our platform offers a comprehensive suite of tools designed to help
-          you take control of your financial future. From budgeting and expense
-          tracking to investment management and retirement planning, we provide
-          everything you need to make informed decisions about your money.
+          you take control of your financial future.
         </p>
 
         <div className="flex justify-center gap-4">
@@ -56,14 +49,18 @@ const HeroSection = () => {
             </Button>
           </Link>
         </div>
+      </div>
 
-        <div ref={imageRef}>
+      {/* IMAGE */}
+      <div className="hero-image-wrapper mt-16 flex justify-center">
+        <div ref={imageRef} className="hero-image">
           <Image
-            src="/okk.jpg"
-            width={1000}
+            src="/download.jpg"
+            width={1100}
             height={720}
             alt="banner"
-            className="rounded-lg shadow-2xl border mx-auto transition-all duration-500"
+            className="rounded-xl shadow-2xl border"
+            priority
           />
         </div>
       </div>

@@ -40,28 +40,23 @@
 /* ================= UTILITIES ================= */
 @layer utilities {
   .gradient-title {
-    @apply 
-      bg-gradient-to-br
-      from-blue-500
-      to-purple-600
-      font-extrabold
-      tracking-tighter
-      pr-2
-      pb-2
-      text-transparent
-      bg-clip-text;
+    @apply bg-gradient-to-br from-blue-500 to-purple-600
+           font-extrabold tracking-tighter
+           pr-2 pb-2 text-transparent bg-clip-text;
   }
-  
-}
-.hero-image-wrapper{
-  perspective:1500px;
 
+  .hero-image-wrapper {
+  perspective: 1500px;
 }
-.hero-image{
-  transform:rotate(15deg) scale(1);
-  transform: 0.5s ease-in-out;
-  will-change:transform;
+
+.hero-image {
+  transform: rotateX(20deg) scale(0.95);
+  transition: transform 0.6s ease-out; /* ✅ FIX */
+  will-change: transform;
 }
-.hero-image-scrolled{
-  transform:rotate(0deg) scale(1) translate(40);
+
+.hero-image-scrolled {
+  transform: rotateX(0deg) scale(1);
+}
+
 }
