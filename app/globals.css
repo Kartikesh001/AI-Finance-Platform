@@ -50,7 +50,7 @@
 }
 
 .hero-image {
-  transform: rotateX(20deg) scale(0.95);
+  transform: rotateX(15deg) scale(0.95);
   transition: transform 0.6s ease-out; /* ✅ FIX */
   will-change: transform;
 }
